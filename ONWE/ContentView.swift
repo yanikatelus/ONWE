@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     
     init(){
-        UITabBar.appearance().backgroundColor = UIColor.opaqueSeparator
+        UITabBar.appearance().backgroundColor = UIColor.brown
     }
     
     var body: some View {
@@ -19,17 +19,19 @@ struct ContentView: View {
                 MainView()
                     .tabItem {
                         Image(systemName: "sun.haze.fill")
-                        Text("Home")
+                        Text("HOME")
                     }
                 
                 QuoteView()
                     .tabItem {
                         Image(systemName: "quote.bubble")
                             .environment(\.symbolVariants, .none)
+                        Text("QUOTE")
                     }
                 JournalView()
                     .tabItem {
-                        Image(systemName: "sun.haze")
+                        Image(systemName: "book.fill")
+                        Text("JOURNAL")
                     }
             }//end of tab view
 //        .tabViewStyle(.page)
