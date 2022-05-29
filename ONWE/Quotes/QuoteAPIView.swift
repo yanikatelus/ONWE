@@ -11,13 +11,11 @@ struct QuoteAPIView: View {
     @State private var results = [Result]()
     
     var body: some View {
-        
-        List(results, id: \._id) { item in
-            VStack(alignment: .leading) {
-                Text(item.content)
-                    .foregroundColor(.blue)
-                   
-                Text(item.author)
+        ZStack{
+            ForEach(results, id: \._id) { item in
+                ZStack() {
+                    SwipeView(person: item.content)
+                }
             }
         }
         .task {
@@ -26,7 +24,7 @@ struct QuoteAPIView: View {
 
     }
     func loadData() async {
-        guard let url2 = URL(string: "https://quotable.io/quotes?page=1") else{
+        guard let url2 = URL(string: "https://quotable.io/quotes?tags=inspirational") else{
             return
         }//end of else
         do{

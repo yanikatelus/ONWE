@@ -22,7 +22,7 @@ struct ContentView: View {
                         Text("HOME")
                     }
                 
-                QuoteView()
+                QuoteAPIView()
                     .tabItem {
                         Image(systemName: "quote.bubble")
                             .environment(\.symbolVariants, .none)

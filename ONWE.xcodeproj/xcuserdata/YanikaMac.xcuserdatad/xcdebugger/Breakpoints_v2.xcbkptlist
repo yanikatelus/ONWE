@@ -20,5 +20,84 @@
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "88C5164C-334F-4250-902A-41170158849D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ONWE/Quotes/QuoteAPIView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "loadData()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "88C5164C-334F-4250-902A-41170158849D - 53e4c8aefc6eeadd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Sendable () async -&gt; () in ONWE.QuoteAPIView.body.getter : some"
+                  moduleName = "ONWE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/YanikaMac/Desktop/454/ONWE/ONWE/Quotes/QuoteAPIView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  uuid = "88C5164C-334F-4250-902A-41170158849D - d450aab58903a561"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) await resume partial function for closure #2 @Sendable () async -&gt; () in ONWE.QuoteAPIView.body.getter : some"
+                  moduleName = "ONWE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/YanikaMac/Desktop/454/ONWE/ONWE/Quotes/QuoteAPIView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "88C5164C-334F-4250-902A-41170158849D - 40195ee6ac057806"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) suspend resume partial function for closure #2 @Sendable () async -&gt; () in ONWE.QuoteAPIView.body.getter : some"
+                  moduleName = "ONWE"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/YanikaMac/Desktop/454/ONWE/ONWE/Quotes/QuoteAPIView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "36">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D40D6F76-AD01-4C41-80D0-A996D77CADD4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ONWE/Quotes/QuoteAPIView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "loadData()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
