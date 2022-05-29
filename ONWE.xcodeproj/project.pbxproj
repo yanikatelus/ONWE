@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8952945A2842F4820068E347 /* QuoteDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895294592842F4820068E347 /* QuoteDataModel.swift */; };
+		8952945C284307650068E347 /* QuoteAPIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952945B284307650068E347 /* QuoteAPIView.swift */; };
 		89D9893C283C4538003BA8CC /* EditNoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9893B283C4538003BA8CC /* EditNoteView.swift */; };
 		89D9893F283C457B003BA8CC /* NoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D9893E283C457B003BA8CC /* NoteView.swift */; };
 		89D98941283C45B2003BA8CC /* NotesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D98940283C45B2003BA8CC /* NotesData.swift */; };
@@ -21,6 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		895294592842F4820068E347 /* QuoteDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteDataModel.swift; sourceTree = "<group>"; };
+		8952945B284307650068E347 /* QuoteAPIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteAPIView.swift; sourceTree = "<group>"; };
 		89D9893B283C4538003BA8CC /* EditNoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditNoteView.swift; sourceTree = "<group>"; };
 		89D9893E283C457B003BA8CC /* NoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteView.swift; sourceTree = "<group>"; };
 		89D98940283C45B2003BA8CC /* NotesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotesData.swift; sourceTree = "<group>"; };
@@ -50,6 +54,7 @@
 			isa = PBXGroup;
 			children = (
 				89E66AA5281C2EB00068B6C0 /* QuoteView.swift */,
+				8952945B284307650068E347 /* QuoteAPIView.swift */,
 			);
 			path = Quotes;
 			sourceTree = "<group>";
@@ -58,6 +63,7 @@
 			isa = PBXGroup;
 			children = (
 				89D98940283C45B2003BA8CC /* NotesData.swift */,
+				895294592842F4820068E347 /* QuoteDataModel.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -190,10 +196,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8952945A2842F4820068E347 /* QuoteDataModel.swift in Sources */,
 				89D98943283C4609003BA8CC /* DateFormatter.swift in Sources */,
 				89E66AA6281C2EB00068B6C0 /* QuoteView.swift in Sources */,
 				89E66AB2281C66220068B6C0 /* JournalView.swift in Sources */,
 				89E66A94281245900068B6C0 /* ContentView.swift in Sources */,
+				8952945C284307650068E347 /* QuoteAPIView.swift in Sources */,
 				89E66A92281245900068B6C0 /* ONWEApp.swift in Sources */,
 				89D9893C283C4538003BA8CC /* EditNoteView.swift in Sources */,
 				89D98941283C45B2003BA8CC /* NotesData.swift in Sources */,
