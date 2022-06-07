@@ -9,9 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     
+    let green = UIColor(red: 0.09, green: 0.11, blue: 0.05, alpha: 0.9)
+    //chnage Tab bar background color
     init(){
-        UITabBar.appearance().backgroundColor = UIColor.brown
+        UITabBar.appearance().backgroundColor = green
+        UITabBar.appearance().unselectedItemTintColor = UIColor.white
+        UITabBar.appearance().barTintColor = green
     }
+    
     
     var body: some View {
         
@@ -19,24 +24,22 @@ struct ContentView: View {
                 MainView()
                     .tabItem {
                         Image(systemName: "sun.haze.fill")
-                        Text("HOME")
+                        Text("H O M E")
+                        
                     }
                 
                 QuoteAPIView()
                     .tabItem {
                         Image(systemName: "quote.bubble")
-                            .environment(\.symbolVariants, .none)
-                        Text("QUOTE")
+                            .environment(\.symbolVariants, .none)//removes fill
+                        Text("Q U O T E")
                     }
                 JournalView()
                     .tabItem {
                         Image(systemName: "book.fill")
-                        Text("JOURNAL")
+                        Text("J O U R N A L")
                     }
-            }//end of tab view
-//        .tabViewStyle(.page)
-//        .indexViewStyle(.page(backgroundDisplayMode: .always))
-//        .indexViewStyle(PageIndexViewStyle(backgroundDisplayMode: .always))
+            }
     }//end of body
 }
 

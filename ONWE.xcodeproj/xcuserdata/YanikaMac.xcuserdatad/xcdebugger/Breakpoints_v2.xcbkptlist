@@ -30,9 +30,9 @@
             filePath = "ONWE/Quotes/QuoteAPIView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
-            landmarkName = "loadData()"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "loadData(url:)"
             landmarkType = "7">
             <Locations>
                <Location
@@ -93,9 +93,25 @@
             filePath = "ONWE/Quotes/QuoteAPIView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
-            landmarkName = "loadData()"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "loadData(url:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BDC86AD2-3D54-41C9-AB14-A4B345ADE84B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ONWE/Quotes/QuoteAPIView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "loadData(url:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
