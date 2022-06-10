@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		89021DF1284FCC87009FF73B /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89021DF0284FCC87009FF73B /* SettingsView.swift */; };
 		8952945A2842F4820068E347 /* QuoteDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 895294592842F4820068E347 /* QuoteDataModel.swift */; };
 		8952945C284307650068E347 /* QuoteAPIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952945B284307650068E347 /* QuoteAPIView.swift */; };
 		8952945E284313C30068E347 /* SwipeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8952945D284313C20068E347 /* SwipeView.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		89021DF0284FCC87009FF73B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		895294592842F4820068E347 /* QuoteDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteDataModel.swift; sourceTree = "<group>"; };
 		8952945B284307650068E347 /* QuoteAPIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteAPIView.swift; sourceTree = "<group>"; };
 		8952945D284313C20068E347 /* SwipeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeView.swift; sourceTree = "<group>"; };
@@ -52,6 +54,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		89021DEF284FCC54009FF73B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				89021DF0284FCC87009FF73B /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		895294582842BF1B0068E347 /* Quotes */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +123,7 @@
 				89E66A91281245900068B6C0 /* ONWEApp.swift */,
 				89E66A93281245900068B6C0 /* ContentView.swift */,
 				89E66AA3281C2E050068B6C0 /* MainView.swift */,
+				89021DEF284FCC54009FF73B /* Settings */,
 				895294582842BF1B0068E347 /* Quotes */,
 				89D9893D283C4547003BA8CC /* Journal */,
 				89E66A95281245930068B6C0 /* Assets.xcassets */,
@@ -208,6 +219,7 @@
 				89E66A92281245900068B6C0 /* ONWEApp.swift in Sources */,
 				89D9893C283C4538003BA8CC /* EditNoteView.swift in Sources */,
 				89D98941283C45B2003BA8CC /* NotesData.swift in Sources */,
+				89021DF1284FCC87009FF73B /* SettingsView.swift in Sources */,
 				8952945E284313C30068E347 /* SwipeView.swift in Sources */,
 				89D9893F283C457B003BA8CC /* NoteView.swift in Sources */,
 				89E66AA4281C2E050068B6C0 /* MainView.swift in Sources */,

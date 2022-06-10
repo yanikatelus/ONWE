@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UserNotifications
 
 struct QuoteAPIView: View {
     @State private var results = [Result]()
@@ -15,15 +16,46 @@ struct QuoteAPIView: View {
     private var success = "https://quotable.io/quotes?tags=success"
     private var accentColor = Color(red: 0.89, green: 0.96, blue: 0.88, opacity: 0.9)
     
+    //settings
+    @State private var settingIsShowing = false
+    
     var body: some View {
         ZStack{
             ZStack{
                 ForEach(results, id: \._id) { item in
                     ZStack() {
                         SwipeView(cardContent: item.content, author: item.author)
+//                        SwipeView(cardContent: item.text, author: item.author)
                     }
                 }
-            }//end of 2nd zstack
+            }//End of zstack->
+            
+            /* In app Notification */
+            VStack{
+                HStack{
+//                    SettingsView()
+                    Spacer()
+                    Button {
+                        withAnimation {
+                            self.settingIsShowing.toggle()
+                        }
+                        } label:{
+                        Image(systemName: "gearshape.fill")
+                            .font(.title2)
+                            .padding(.horizontal, 30)
+                            .foregroundColor(.white)
+                            .sheet(isPresented: $settingIsShowing) {
+//                                SettingsView(results: $results)
+                                SettingsView()
+                            }
+                        }
+                    
+                    
+                }//End of HStack
+                Spacer()
+            }//End of VStack
+            
+            /* Bottom Quote Tag buttons */
             VStack{
                 Spacer()
                 HStack{
@@ -84,9 +116,9 @@ struct QuoteAPIView: View {
         .task {
             await loadData(url: inspirational)
         }
-        .onAppear { // ADD THESE
+        .onAppear {
           UITableView.appearance().backgroundColor = .clear
-        }
+        }//end of onAppear
 
     }
     func loadData(url: String) async {

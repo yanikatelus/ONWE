@@ -40,11 +40,6 @@ struct NoteView: View {
                         .onTapGesture {
                             self.isActive.toggle()
                         }
-//                    Text(note.content)
-//                        .font(.body)
-//                        .foregroundColor(Color(red: 0.33, green: 0.42, blue: 0.18))
-//                        .padding(.vertical)
-//                        .lineLimit(4)
                     Spacer()
                     }//end of hstack
                 }//end of vstack

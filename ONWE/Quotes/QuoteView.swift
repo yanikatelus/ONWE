@@ -9,12 +9,13 @@ import SwiftUI
 
 //Combined in QuoteAPIView
 struct QuoteView: View {
-    @State var viewModel = ViewModel()
-    @State var viewState = CGSize.zero
 
     var body: some View {
         
         ZStack {
+            Text("No more new Quotes")
+                .font(.largeTitle)
+                .foregroundColor(.white)
             QuoteAPIView()
                 .onAppear { // ADD THESE
                   UITableView.appearance().backgroundColor = .clear

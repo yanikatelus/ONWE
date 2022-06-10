@@ -47,7 +47,7 @@ struct EditNoteView: View {
                         .foregroundColor(.white)
                         .textCase(.uppercase)
                     Image("\(selection.rawValue)")
-               }//end of stack
+               }//end of VStack
 //                .background(dep)
                 
 // if you have more time make the background change depending on the selected value => get selection == selection.rawValue

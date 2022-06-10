@@ -9,11 +9,9 @@ import SwiftUI
 
 struct SwipeView: View {
     @State var viewModel = ViewModel()
-    @State var viewState = CGSize.zero
-
-    
     @State private var offset = CGSize.zero
-    @State var detail: ViewModel = ViewModel()
+    
+    //params
     var cardContent: String
     var author: String
     
@@ -48,25 +46,23 @@ struct SwipeView: View {
             
         }
         .offset(x: offset.width * 0.01, y: offset.height * 1)
-//        .rotationEffect(.degrees(Double(offset.width / 40)))
+
         .gesture(
             DragGesture()
                 .onChanged { gesture in
                     offset = gesture.translation
                     withAnimation {
-                        self.detail.getNewImage()
                         viewModel.getNewImage()
                     }
                 }
                 .onEnded { _ in
                     withAnimation {
                         swipeCard(height: offset.height)
-                        self.detail.getNewImage()
                         viewModel.getNewImage()
                     }
                 })
         }
-        
+        //removes card by swipping of screen (screen height)
         func swipeCard(height: CGFloat) {
             switch height {
             case -1600...(-150):
