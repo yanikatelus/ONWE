@@ -21,10 +21,14 @@ struct ContentView: View {
     var body: some View {
         
             TabView{
+//                SoundView()
                 MainView()
                     .tabItem {
                         Image(systemName: "sun.haze.fill")
+//                        Image(systemName: "megaphone")
                         Text("H O M E")
+//                        Text("S O U N D")
+
                         
                     }
                 

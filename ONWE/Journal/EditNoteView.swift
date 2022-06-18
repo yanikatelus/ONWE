@@ -24,7 +24,6 @@ struct EditNoteView: View {
    }
 
     @State var selection: Option = .sad
-    let dep = LinearGradient(gradient: Gradient(colors: [Color(red: 0.33, green: 0.42, blue: 0.18), Color(red: 0.18, green: 0.22, blue: 0.10)]), startPoint: .leading, endPoint: .trailing)
     
     @State private var pickerSelection = "indifferent"
     var body: some View {
@@ -48,7 +47,6 @@ struct EditNoteView: View {
                         .textCase(.uppercase)
                     Image("\(selection.rawValue)")
                }//end of VStack
-//                .background(dep)
                 
 // if you have more time make the background change depending on the selected value => get selection == selection.rawValue
 //           Text("Selected value \(selection.rawValue)")
@@ -73,13 +71,10 @@ struct EditNoteView: View {
                 
                 
                 ZStack {
-//                    RoundedRectangle(cornerRadius: 15, style: .continuous)
-//                        .fill(Color(red: 0.89, green: 0.96, blue: 0.88))
                     TextEditor(text: $content)
                         .frame(idealHeight: 325)
                         .padding(1)
                         .font(.title3)
-//                        .foregroundColor(Color(red: 0.33, green: 0.42, blue: 0.18))
                         .foregroundColor(.white)
                 }//Zstack
                 HStack {

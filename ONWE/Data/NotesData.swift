@@ -26,7 +26,7 @@ struct Note : Codable, Identifiable {
     }
     
     init() {
-        // Load saved data
+        // Load previous data
         if let data = UserDefaults.standard.data(forKey: NOTES_KEY) {
             if let decodedNotes = try? JSONDecoder().decode([Note].self, from: data) {
                 notes = decodedNotes

@@ -25,15 +25,14 @@ struct QuoteAPIView: View {
                 ForEach(results, id: \._id) { item in
                     ZStack() {
                         SwipeView(cardContent: item.content, author: item.author)
-//                        SwipeView(cardContent: item.text, author: item.author)
                     }
                 }
             }//End of zstack->
             
-            /* In app Notification */
+            /* Settings:
+                in-app Notification */
             VStack{
                 HStack{
-//                    SettingsView()
                     Spacer()
                     Button {
                         withAnimation {
@@ -43,14 +42,18 @@ struct QuoteAPIView: View {
                         Image(systemName: "gearshape.fill")
                             .font(.title2)
                             .padding(.horizontal, 30)
-                            .foregroundColor(.white)
+                            .foregroundColor(Color(red: 0.95, green: 0.98, blue: 0.94))
                             .sheet(isPresented: $settingIsShowing) {
-//                                SettingsView(results: $results)
                                 SettingsView()
                             }
-                        }
-                    
-                    
+                        }//end of button
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 15)
+                                .stroke(lineWidth: 20)
+                                .frame(width: 50, height: 50)
+                                .foregroundColor(Color(red: 0.0, green: 0.0, blue: 0.0, opacity: 0.4))
+                        )
+
                 }//End of HStack
                 Spacer()
             }//End of VStack

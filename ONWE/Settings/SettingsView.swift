@@ -14,8 +14,6 @@ struct SettingsView: View {
     @State var results = ["there is hope even when your brain tells you there isn't","Healing is not linear", "I show my scars so that others may heal", "\"Once you choose hope, anything is possible.\" —Christopher Reeve","\"There are far, far better things ahead than anything we leave behind.\" —C.S. Lewis","“Give yourself another day, another chance. You will find your courage eventually. Don’t give up on yourself just yet.” "]
     @State var date: Date = Date()
     
-    //show Time picker view
-//    @State private var showView = false
     
     var body: some View {
         ZStack {

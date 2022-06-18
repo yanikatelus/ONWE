@@ -67,6 +67,7 @@ struct JournalView: View {
         .environmentObject(notes)
         }//ZStack
         }//Navview
+        .navigationTitle("My Journal")
     }//end
 }
 
