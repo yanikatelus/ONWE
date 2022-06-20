@@ -34,7 +34,7 @@ struct Note : Codable, Identifiable {
             }
         }
         // Tutorial Note
-        notes = [Note(title: "Test Note", content: "Click on the 'I'm Feeling' button to add a new journal entry! \n <-Swipe left to delete notes", timeStamp: formatDate(NSDate().timeIntervalSince1970), emoticon: "happy")]
+        notes = [Note(title: "Test Note", content: "Tap on the 'I'm Feeling' button to add a new journal entry! \n <- Swipe left to delete notes", timeStamp: formatDate(NSDate().timeIntervalSince1970), emoticon: "happy")]
     }
     
     func addNote(title: String, content: String, emoticon: String) {

@@ -9,9 +9,11 @@ import SwiftUI
 
 @main
 struct ONWEApp: App {
+    @StateObject var audioManager = AudioManager()
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(audioManager)
         }
     }
 }

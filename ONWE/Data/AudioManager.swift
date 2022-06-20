@@ -14,6 +14,7 @@ final class AudioManager: ObservableObject {
     var player: AVAudioPlayer?
     
     func startPlayer(track: String, isPreview: Bool = false) {
+//    func startPlayer(track: String) {
         guard let url = Bundle.main.url(forResource: track, withExtension: "mp3") else {
             print("Error || Music File was not found: \(track)")
             return

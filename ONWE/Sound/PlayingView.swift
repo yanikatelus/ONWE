@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct PlayingView: View {
+    @EnvironmentObject var audioManager: AudioManager
+    
     var soundPlayerVM: SoundPlayerViewModel
     @State var lightGreen = Color(red: 0.78, green: 0.91, blue: 0.75, opacity: 0.9)
     @State private var sliderValue : Double = 0.0
+    
+    var isPreview: Bool = false
     @State var title: String
     
     @Environment(\.dismiss) var disssmiss
@@ -65,7 +69,6 @@ struct PlayingView: View {
                         PlayerControls(systemName: "repeat"){
                             
                         }
-                        
                         Spacer()
                         
                         //Control: Go Backwards 15s
@@ -98,6 +101,9 @@ struct PlayingView: View {
             
         }//END of ZStack
         .frame(width: UIScreen.main.bounds.width)
+        .onAppear(){
+            audioManager.startPlayer(track: title, isPreview: isPreview)
+        }
         
         
     }//End of Body View
@@ -107,6 +113,7 @@ struct PlayingView_Previews: PreviewProvider {
     static let soundPlayerViewModel = SoundPlayerViewModel(soundPlayer: SoundPlayer.data)
     
     static var previews: some View {
-        PlayingView(soundPlayerVM: soundPlayerViewModel, title: "rain")
+        PlayingView(soundPlayerVM: soundPlayerViewModel, isPreview: true, title: "Rain")
+            .environmentObject(AudioManager())
     }
 }
