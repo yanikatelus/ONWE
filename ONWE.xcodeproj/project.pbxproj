@@ -165,16 +165,16 @@
 		89FA3E8228551D4200E8284B /* Sound */ = {
 			isa = PBXGroup;
 			children = (
-				89658F38285CFF1F00E74B07 /* PlayerControls.swift */,
-				89658F36285CF60800E74B07 /* PlayingView.swift */,
 				89658F432860133800E74B07 /* Cricket.mp3 */,
 				89658F49286021D700E74B07 /* Calm.mp3 */,
 				89658F422860133800E74B07 /* Rain.mp3 */,
 				89658F4D286023E500E74B07 /* Bliss.mp3 */,
 				89658F4B286022FC00E74B07 /* Uplifting.mp3 */,
 				89658F442860133800E74B07 /* River.mp3 */,
-				89FA3E83285545F700E8284B /* SoundView.swift */,
 				89658F3E285FA17000E74B07 /* WhiteNoiseView.swift */,
+				89658F36285CF60800E74B07 /* PlayingView.swift */,
+				89FA3E83285545F700E8284B /* SoundView.swift */,
+				89658F38285CFF1F00E74B07 /* PlayerControls.swift */,
 			);
 			path = Sound;
 			sourceTree = "<group>";

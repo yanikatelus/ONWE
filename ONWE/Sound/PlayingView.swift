@@ -13,11 +13,16 @@ struct PlayingView: View {
     var soundPlayerVM: SoundPlayerViewModel
     @State var lightGreen = Color(red: 0.78, green: 0.91, blue: 0.75, opacity: 0.9)
     @State private var sliderValue : Double = 0.0
+    @State private var volumeBar : Double = 0.0
     
+    @State private var isEditing: Bool = false
     var isPreview: Bool = false
     @State var title: String
     
     @Environment(\.dismiss) var disssmiss
+    let timer = Timer
+        .publish(every: 0.25, on: .main, in: .common)
+        .autoconnect()
     
     var body: some View {
         
@@ -53,49 +58,69 @@ struct PlayingView: View {
                     .foregroundColor(lightGreen)
                 Spacer()
                 
-                VStack{
-                    Slider(value: $sliderValue, in: 0...60)
-                        //will be depricated in future versions of IOS
-                        .accentColor(.white)
-                    HStack{
-                        Text("0:00")
-                        Spacer()
-                        Text("10:00")
-                    }
-                    .foregroundColor(.white)
-                    
-                    HStack{
-                        //Control: Repeat
-                        PlayerControls(systemName: "repeat"){
-                            
-                        }
-                        Spacer()
+                //optional binding
+                if let player = audioManager.player {
+                    VStack{
                         
-                        //Control: Go Backwards 15s
-                        PlayerControls(systemName: "gobackward.15"){
+                        Slider(value: $sliderValue, in: 0...player.duration){ editing in
+                            print("editing", editing)
+                            isEditing = editing
                             
+                            if !editing {
+                                player.currentTime = sliderValue
+                            }
+                            
+                        }
+                            //will be depricated in future versions of IOS
+                            .accentColor(.white)
+                        HStack{
+                            Text(DateComponentsFormatter.positional.string(from: player.currentTime) ?? "0:00")
+                            Spacer()
+                            Text(DateComponentsFormatter.positional.string(from: player.duration - player.currentTime) ?? "0:00")
+                        }
+                        .foregroundColor(.white)
+                        
+                        HStack{
+                            //Control: Repeat
+                            PlayerControls(systemName: "repeat"){
+                                
+                            }
+                            Spacer()
+                            
+                            //Control: Go Backwards 15s
+                            PlayerControls(systemName: "gobackward.15"){
+                                
+                            }
+                            
+                            //Control: PLAY
+                            PlayerControls(systemName: "play.fill", fontSize: 45){
+                                
+                            }
+                            .padding(.horizontal, 20)
+                            
+                            //Control: Repeat
+                            PlayerControls(systemName: "goforward.15"){
+                                
+                            }
+                            Spacer()
+                            //Control: Repeat
+                            PlayerControls(systemName: "repeat"){
+                                
+                            }
                         }
                         
-                        //Control: PLAY
-                        PlayerControls(systemName: "play.fill", fontSize: 45){
-                            
-                        }
-                        .padding(.horizontal, 20)
+                        HStack{
+                            //Volume bar
+                            Slider(value: $volumeBar, in: 0...100)
+                                //will be depricated in future versions of IOS
+                                .accentColor(.white)
+                                .padding(.horizontal, 30)
+                                .opacity(0.7)
+                        }//end of Hstack
                         
-                        //Control: Repeat
-                        PlayerControls(systemName: "goforward.15"){
-                            
-                        }
-                        Spacer()
-                        //Control: Repeat
-                        PlayerControls(systemName: "repeat"){
-                            
-                        }
-                    }
-                    HStack{
-                        //Volume bar
-                    }
-                }//END  of  Vstack
+                    }//END  of  Vstack
+                }//END OF IF LET
+                
             }//end of VSTACK
             .padding()
             
@@ -103,6 +128,10 @@ struct PlayingView: View {
         .frame(width: UIScreen.main.bounds.width)
         .onAppear(){
             audioManager.startPlayer(track: title, isPreview: isPreview)
+        }
+        .onReceive(timer) { _ in
+            guard let player = audioManager.player, !isEditing else { return }
+            sliderValue = player.currentTime
         }
         
         
@@ -114,6 +143,7 @@ struct PlayingView_Previews: PreviewProvider {
     
     static var previews: some View {
         PlayingView(soundPlayerVM: soundPlayerViewModel, isPreview: true, title: "Rain")
+        //prevent preview from crashing
             .environmentObject(AudioManager())
     }
 }
