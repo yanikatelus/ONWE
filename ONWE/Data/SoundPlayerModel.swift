@@ -22,5 +22,5 @@ struct SoundPlayer{
     let track : String
     let image: String
     
-    static let data = SoundPlayer(tittle: "Title ex 1", description: "This is a very long description", duration: 70, track: "rain", image: "rain")
+    static let data = SoundPlayer(tittle: "Rain", description: "testing data", duration: 120, track: "Rain", image: "Rain")
 }

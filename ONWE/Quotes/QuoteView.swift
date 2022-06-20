@@ -13,7 +13,7 @@ struct QuoteView: View {
     var body: some View {
         
         ZStack {
-            Text("No more new Quotes")
+            Text("You have reached  the end")
                 .font(.largeTitle)
                 .foregroundColor(.white)
             QuoteAPIView()

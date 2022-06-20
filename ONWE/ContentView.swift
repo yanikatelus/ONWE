@@ -20,32 +20,27 @@ struct ContentView: View {
     
     var body: some View {
         
-            TabView{
-//                SoundView()
-                MainView()
-                    .tabItem {
-                        Image(systemName: "sun.haze.fill")
-//                        Image(systemName: "megaphone")
-                        Text("H O M E")
-//                        Text("S O U N D")
-
-                        
-                    }
-                
-                QuoteAPIView()
-                    .tabItem {
-                        Image(systemName: "quote.bubble")
-                            .environment(\.symbolVariants, .none)//removes fill
-                        Text("Q U O T E")
-                    }
-                JournalView()
-                    .tabItem {
-                        Image(systemName: "book.fill")
-                        Text("J O U R N A L")
-                    }
-            }
+        TabView{
+            WhiteNoiseView()
+                .tabItem {
+                    Image(systemName: "music.quarternote.3")
+                    Text("S O U N D")
+                }
+            
+            QuoteAPIView()
+                .tabItem {
+                    Image(systemName: "quote.bubble")
+                        .environment(\.symbolVariants, .none)//removes fill
+                    Text("Q U O T E")
+                }
+            JournalView()
+                .tabItem {
+                    Image(systemName: "book.fill")
+                    Text("J O U R N A L")
+                }
+        }//
     }//end of body
-}
+}//END
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
