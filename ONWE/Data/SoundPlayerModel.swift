@@ -14,8 +14,9 @@ final class SoundPlayerViewModel: ObservableObject {
         self.soundPlayer = soundPlayer
     }
 }
-//struct SoundPlayer : Hashable{
-struct SoundPlayer {
+
+struct SoundPlayer : Hashable, Codable{
+//struct SoundPlayer {
     let _id = UUID()
     let tittle: String
     let description : String
@@ -24,4 +25,8 @@ struct SoundPlayer {
     let image: String
     
     static let data = SoundPlayer(tittle: "Rain", description: "testing data", duration: 120, track: "Rain", image: "Rain")
+}
+
+struct DummyData: Codable {
+    var resultDummyData: [SoundPlayer]
 }

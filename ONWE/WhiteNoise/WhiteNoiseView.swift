@@ -2,7 +2,7 @@
 //  WhiteNoiseView.swift
 //  ONWE
 //
-//  Created by Yanika Telus on 6/19/22.
+//  Created by Yanika Telus on 6/10/22.
 //
 
 import SwiftUI
@@ -11,12 +11,15 @@ struct WhiteNoiseView: View {
     @State var shadow = Color(red: 0.09, green: 0.11, blue: 0.05, opacity: 0.3)
     var lightGreen = Color(red: 0.78, green: 0.91, blue: 0.75)
 //    @State var list = [SoundPlayer]()
+    //using arrays for ease of use: Full app would you so
+//    @State var resultDummyData: DummyData
     var nameArray = ["Rain", "Cricket", "River"]
     var calmArray = ["Calm", "Uplifting", "Bliss"]
     static let soundPlayerViewModel = SoundPlayerViewModel(soundPlayer: SoundPlayer.data)
     
     var body: some View {
 //        let rain = SoundPlayer.init(tittle: "Rain", description: "2 Minutes of Calming rain", duration: 122, track: "Rain", image: "Rain")
+//        resultDummyData.resultDummyData.append(rain)
         
         ZStack {
             Color(red: 0.33, green: 0.42, blue: 0.18)
@@ -38,7 +41,7 @@ struct WhiteNoiseView: View {
                 
                 ScrollView(.horizontal) {
                     HStack {
-//                        ForEach(list, id: \.self){ elm in
+//                        ForEach(resultDummyData, id: \.self){ elm in
 //                            list.append(rain)
 //                            SoundView(shadow: shadow, soundPlayerViewModel: WhiteNoiseView.soundPlayerViewModel, Name: elm.tittle, Description: elm.description)
 //                        }

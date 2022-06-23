@@ -20,7 +20,8 @@ struct SwipeView: View {
             if let image = viewModel.image{
                 image
                     .resizable()
-                    .ignoresSafeArea()//make the image move to corners
+//                    .scaledToFill()
+                    .ignoresSafeArea()
                     .overlay(
                         Color(red: 0.09, green: 0.11, blue: 0.05, opacity: 0.6)
                     )
@@ -31,17 +32,19 @@ struct SwipeView: View {
                     .overlay(
                         Color(red: 0.0, green: 0.0, blue: 0.0, opacity: 0.6)
                     )
+//                    .background(.thickMaterial)
             }//end of else
             VStack {
                 Text(cardContent)
                     .font(.largeTitle)
                     .foregroundColor(.white)
                     .bold()
-                    .frame(width: 320, height: 400)
+                    .frame(width: 300, height: 400)
                 Text("Author : \(author)")
                     .foregroundColor(.white)
                     .font(.subheadline)
                     .bold()
+                    .frame(width: 300, height: 50)
             }
             
         }
@@ -99,10 +102,10 @@ class ViewModel: ObservableObject{
 struct SwipeView_Previews: PreviewProvider {
     static var previews: some View {
         ZStack{
-            SwipeView(cardContent: "gjhkkhvcfghjkbvgcfrtyhjbnvcfdghj", author: "ksyehe")
-        SwipeView(cardContent: "gfhjkl", author: "defghjkl")
-        SwipeView(cardContent: "gjhkkhvcfghjkbvgcfrtyhjbnvcfdghj", author: "kl;lhg")
-        SwipeView(cardContent: "gfhjkl", author: "cdfvghjkl, kmnbvcfdgthyjukl, mnbvfghyjuki")
+            SwipeView(cardContent: "This is a nice quote", author: "ksyehe")
+        SwipeView(cardContent: "This wuote doesn't have a real meaning", author: "poiuyt")
+        SwipeView(cardContent: "Quote number three", author: "wertyuio")
+        SwipeView(cardContent: "Lorem Ipsum", author: " kmnbvcfdgthyjukl, mnbvfghyjuki")
         }
     }
 }

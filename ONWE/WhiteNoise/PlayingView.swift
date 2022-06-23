@@ -2,7 +2,7 @@
 //  PlayingView.swift
 //  ONWE
 //
-//  Created by Yanika Telus on 6/17/22.
+//  Created by Yanika Telus on 6/10/22.
 //
 
 import SwiftUI
@@ -13,7 +13,7 @@ struct PlayingView: View {
     var soundPlayerVM: SoundPlayerViewModel
     @State var lightGreen = Color(red: 0.78, green: 0.91, blue: 0.75, opacity: 0.9)
     @State private var sliderValue : Double = 0.0
-    @State private var volumeBar : Double = 0.0
+//    @State private var volumeBar : Double = 0.0
     
     @State private var isEditing: Bool = false
     var isPreview: Bool = false
@@ -28,7 +28,6 @@ struct PlayingView: View {
         
         
         ZStack{
-            
             Image(title)
                 .resizable()
                 .scaledToFill()
@@ -81,42 +80,46 @@ struct PlayingView: View {
                         .foregroundColor(.white)
                         
                         HStack{
+                            let color: Color = audioManager.isLooping ? lightGreen : .white
                             //Control: Repeat
-                            PlayerControls(systemName: "repeat"){
-                                
+                            PlayerControls(systemName: "repeat", color: color){
+                                audioManager.toggleLoop()
                             }
                             Spacer()
                             
                             //Control: Go Backwards 15s
                             PlayerControls(systemName: "gobackward.15"){
-                                
+                                player.currentTime -= 15
                             }
                             
                             //Control: PLAY
-                            PlayerControls(systemName: "play.fill", fontSize: 45){
+                            PlayerControls(systemName: audioManager.isPlaying ? "pause.circle.fill" : "play.fill" , fontSize: 45){
+                                audioManager.playPause()
                                 
                             }
                             .padding(.horizontal, 20)
                             
-                            //Control: Repeat
+                            //Control: increase 15s
                             PlayerControls(systemName: "goforward.15"){
+                                player.currentTime += 15
                                 
                             }
                             Spacer()
                             //Control: Repeat
-                            PlayerControls(systemName: "repeat"){
-                                
+                            PlayerControls(systemName: "stop"){
+                                audioManager.stop()
+                                    disssmiss()
                             }
                         }
-                        
-                        HStack{
-                            //Volume bar
-                            Slider(value: $volumeBar, in: 0...100)
-                                //will be depricated in future versions of IOS
-                                .accentColor(.white)
-                                .padding(.horizontal, 30)
-                                .opacity(0.7)
-                        }//end of Hstack
+                        //add volume bar if time allows
+//                        HStack{
+//                            //Volume bar
+//                            Slider(value: $volumeBar, in: 0...100)
+//                                //will be depricated in future versions of IOS
+//                                .accentColor(.white)
+//                                .padding(.horizontal, 30)
+//                                .opacity(0.7)
+//                        }//end of Hstack
                         
                     }//END  of  Vstack
                 }//END OF IF LET

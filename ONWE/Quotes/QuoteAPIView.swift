@@ -130,7 +130,7 @@ struct QuoteAPIView: View {
         }//end of else
         do{
             let (data, _) = try  await URLSession.shared.data(from: url2)
-            
+            //optional use if let
             if let decodedResponse = try? JSONDecoder().decode(Response.self,from: data){
                 results = decodedResponse.results
             }

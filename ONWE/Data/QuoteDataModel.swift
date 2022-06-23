@@ -7,9 +7,10 @@
 
 import Foundation
 
-// Api below server is down may have to replace
+// Api below server doe not work consistently may have to replace?
 //https://api.quotable.io/random
 //https://api.quotable.io/random?tags=inspirational
+//Did not find FREE api to use with this code w/o making an account
 
 // possible free replacement
 // generic structure, to recieve from api

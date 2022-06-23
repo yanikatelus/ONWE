@@ -30,11 +30,11 @@ func formatDate(_ timeStamp: Double) -> String {
         default :
             weekday = "SAT"
     }
-    let hour = components.hour ?? 0
-    let minute = components.minute ?? 0
+    
     let day = components.day ?? 0
     let month = components.month ?? 0
     let year = components.year ?? 0
     
     return "\(weekday) \(month) \(day)"
+    //"Sun 12 20"
 }
